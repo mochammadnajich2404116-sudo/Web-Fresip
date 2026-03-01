@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malang Botanic | Premium Botanical Export</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FBFBFB; }
+        .sage-bg { background-color: #789461; }
+        .sage-text { color: #789461; }
+        .sage-border { border-color: #789461; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+            background: #789461;
+        }
+        .shimmer-btn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.4) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-150%) rotate(45deg); }
+            100% { transform: translateX(150%) rotate(45deg); }
+        }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .product-card {
+            min-width: 300px;
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 glass">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo Section -->
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 flex items-center justify-center bg-[#789461] rounded-lg">
+                    <img src="Logo FRESIP dengan elemen air dan daun.png" alt="Logo" class="rounded logo-placeholder object-cover w-full h-full">
+                </div>
+                <span class="font-bold text-xl tracking-tight sage-text">FRE<span class="text-slate-600">SIP</span></span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center gap-8 font-medium">
+                <a href="#home" class="hover:text-[#789461] transition-colors" data-lang-id="Home" data-lang-en="Home">Beranda</a>
+                <a href="#about" class="hover:text-[#789461] transition-colors" data-lang-id="Tentang Kami" data-lang-en="About Us">Tentang</a>
+                <a href="#products" class="hover:text-[#789461] transition-colors" data-lang-id="Produk" data-lang-en="Products">Produk</a>
+                <a href="#contact" class="hover:text-[#789461] transition-colors" data-lang-id="Kontak" data-lang-en="Contact">Kontak</a>
+            </nav>
+
+            <!-- Lang Switcher -->
+            <button onclick="toggleLanguage()" class="flex items-center gap-2 px-3 py-1.5 border rounded-full border-slate-200 hover:bg-slate-50 transition-all font-semibold text-xs">
+                <i data-lucide="languages" class="w-4 h-4"></i>
+                <span id="lang-text">ID | EN</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-20 right-[-10%] w-96 h-96 bg-[#789461] opacity-10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 left-[-10%] w-80 h-80 bg-orange-200 opacity-20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block px-4 py-1 rounded-full bg-[#789461]/10 text-[#789461] font-semibold text-sm mb-6 border border-[#789461]/20" data-lang-id="Ekspor Botani Premium dari Malang" data-lang-en="Premium Botanical Export from Malang">Dapatkan Bubuk Botani Premium dari Malang</span>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6" data-lang-id="Kemurnian Alam Malang Untuk Dunia" data-lang-en="The Purity of Malang's Nature for the World">Kemurnian Alam <span class="sage-text">Malang</span> Untuk Dunia</h1>
+                <p class="text-lg text-slate-600 mb-10 max-w-lg" data-lang-id="Kami menghadirkan bubuk botani kualitas ekspor terbaik dari dataran tinggi Jawa Timur. Tersedia untuk pembelian retail dan partai besar." data-lang-en="We bring the best export-quality botanical powders from the highlands of East Java. Available for retail and bulk purchase.">Kami menghadirkan bubuk botani kualitas ekspor terbaik dari dataran tinggi Jawa Timur. Tersedia untuk pembelian retail dan partai besar.</p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <button class="shimmer-btn px-8 py-4 rounded-xl text-white font-bold flex items-center gap-2 shadow-lg shadow-[#789461]/30">
+                        <span data-lang-id="Katalog AI" data-lang-en="AI Catalog">Eksplorasi Produk</span>
+                        <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    </button>
+                    <a href="https://wa.me/628953654645" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl border border-slate-200 font-bold hover:bg-white transition-all flex items-center gap-2">
+                        <span data-lang-id="Hubungi Kami" data-lang-en="Contact Us">Hubungi Kami</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    </button>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-square rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="heromalang.jpg" alt="Botany Hero" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute -bottom-6 -left-6 glass p-6 rounded-2xl shadow-xl flex items-center gap-4 animate-bounce">
+                    <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold">100% Organic</p>
+                        <p class="text-xs text-slate-500">Certified Export Quality</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="relative grid grid-cols-2 gap-4">
+                        <img src="images.jpeg" class="rounded-2xl mt-8" alt="Process">
+                        <img src="download.jpeg" class="rounded-2xl" alt="Farm">
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <h2 class="text-3xl font-bold mb-6" data-lang-id="Warisan Botani Dataran Tinggi Jawa Timur" data-lang-en="Botanical Heritage from Malang Highlands">Warisan Botani dari Dataran Tinggi Jawa Timur</h2>
+                    <p class="text-slate-600 mb-8" data-lang-id="Malang Botanic memadukan teknik pertanian tradisional Malang dengan teknologi pengolahan modern untuk menjaga nutrisi setiap butiran bubuk." data-lang-en="Malang Botanic combines traditional Malang farming techniques with modern processing technology to preserve the nutrition of every grain of powder.">Malang Botanic memadukan teknik pertanian tradisional Malang dengan teknologi pengolahan modern untuk menjaga nutrisi setiap butiran bubuk.</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-[#789461]/10 flex items-center justify-center text-[#789461]">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" data-lang-id="Sumber Lokal Segar" data-lang-en="Fresh Local Sourcing">Sumber Lokal Segar</h4>
+                                <p class="text-sm text-slate-500" data-lang-id="Dipanen langsung dari kebun di Malang, Jawa Timur." data-lang-en="Harvested directly from farms in Malang, East Java.">Dipanen langsung dari kebun di Malang, Jawa Timur.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-[#789461]/10 flex items-center justify-center text-[#789461]">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" data-lang-id="Pengolahan Higienis" data-lang-en="Hygienic Processing">Pengolahan Higienis</h4>
+                                <p class="text-sm text-slate-500" data-lang-id="Standar sterilisasi tinggi tanpa bahan kimia tambahan." data-lang-en="High sterilization standards without added chemicals.">Standar sterilisasi tinggi tanpa bahan kimia tambahan.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="mt-1 w-6 h-6 rounded-full bg-[#789461]/10 flex items-center justify-center text-[#789461]">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold" data-lang-id="Kesiapan Ekspor" data-lang-en="Export Readiness">Kesiapan Ekspor</h4>
+                                <p class="text-sm text-slate-500" data-lang-id="Pengemasan kedap udara premium untuk pengiriman global." data-lang-en="Premium airtight packaging for global shipping.">Pengemasan kedap udara premium untuk pengiriman global.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chatbot Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto glass rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[500px]">
+                <div class="w-full md:w-1/3 sage-bg p-8 text-white flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4" data-lang-id="Tanya Asisten AI Kami" data-lang-en="Ask Our AI Assistant">Tanya Asisten AI Kami</h3>
+                        <p class="text-sm opacity-80" data-lang-id="Dapatkan rekomendasi produk atau ide penggunaan bubuk botani secara instan." data-lang-en="Get instant product recommendations or usage ideas for botanical powders.">Dapatkan rekomendasi produk atau ide penggunaan bubuk botani secara instan.</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        AI Online & Ready
+                    </div>
+                </div>
+                <div class="flex-1 flex flex-col bg-white">
+                    <div id="chat-window" class="flex-1 p-6 overflow-y-auto space-y-4 text-sm">
+                        <div class="flex gap-3">
+                            <div class="w-8 h-8 rounded-full sage-bg flex items-center justify-center text-white"><i data-lucide="bot" class="w-4 h-4"></i></div>
+                            <div class="bg-slate-100 p-3 rounded-2xl rounded-tl-none max-w-[80%]">
+                                <p data-lang-id="Halo! Saya asisten Malang Botanic. Ada yang bisa saya bantu tentang produk bubuk kami?" data-lang-en="Hello! I'm the Malang Botanic assistant. How can I help you with our powder products?">Halo! Saya asisten Malang Botanic. Ada yang bisa saya bantu tentang produk bubuk kami?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 border-t flex gap-2">
+                        <input type="text" placeholder="Tanya sesuatu..." class="flex-1 px-4 py-2 bg-slate-100 rounded-xl outline-none focus:ring-2 focus:ring-[#789461]/30 transition-all">
+                        <button class="w-10 h-10 sage-bg text-white rounded-xl flex items-center justify-center"><i data-lucide="send" class="w-4 h-4"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Slider Section -->
+    <section id="products" class="py-24 overflow-hidden">
+        <div class="container mx-auto px-6 mb-12 flex justify-between items-end">
+            <div>
+                <h2 class="text-3xl font-bold mb-2" data-lang-id="Koleksi Bubuk Botani" data-lang-en="Botanical Powder Collection">Koleksi Bubuk Botani</h2>
+                <p class="text-slate-500" data-lang-id="Tersedia dalam kemasan satuan (Eco-Sachet) atau grosir." data-lang-en="Available in single packaging (Eco-Sachet) or wholesale.">Tersedia dalam kemasan satuan (Eco-Sachet) atau grosir.</p>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="slideScroll(-320)" class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-[#789461] hover:text-white transition-all"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                <button onclick="slideScroll(320)" class="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center hover:bg-[#789461] hover:text-white transition-all"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+            </div>
+        </div>
+
+        <div id="slider" class="flex gap-8 overflow-x-auto px-6 pb-12 hide-scrollbar scroll-smooth">
+            <script>
+                // Daftar produk yang akan dirender secara otomatis
+                const products = [
+                    { id: 'p1', name: 'Bubuk Apel Malang', enName: 'Malang Apple Powder', desc: 'Manis alami dari varietas apel terbaik Malang.', enDesc: 'Naturally sweet from Malang\'s finest apple varieties.', img: 'Apel.png' },
+                    { id: 'p2', name: 'Bubuk Jahe', enName: 'Ginger Powder', desc: 'Hangat dan murni, cocok untuk minuman kesehatan.', enDesc: 'Warm and pure, perfect for health drinks.', img: 'Jahe.png' },
+                    { id: 'p3', name: 'Bubuk Strawberry', enName: 'Strawberry Powder', desc: 'Warna merah alami yang cantik untuk smoothie.', enDesc: 'Beautiful natural res color for smoothies.', img: 'Strawberry.png' },
+                    { id: 'p4', name: 'Bubuk Jeruk', enName: 'Orange Powder', desc: 'Kesegaran citrus Malang yang kaya Vitamin C.', enDesc: 'Malang citrus freshness rich in Vitamin C.', img: 'Jeruk.png' }
+                ];
+
+                // Render kartu produk dengan ID input yang spesifik per produk
+                document.write(products.map(p => `
+                    <div class="product-card glass rounded-3xl p-6 flex flex-col shadow-lg border border-slate-100">
+                        <div class="relative h-64 mb-6 rounded-2xl overflow-hidden bg-white group">
+                            <img src="${p.img}" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="${p.name}">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-sm">
+                                <i data-lucide="leaf" class="w-3 h-3 text-[#789461]"></i> Export Quality
+                            </div>
+                        </div>
+                        <h4 class="text-xl font-bold mb-1" data-lang-id="${p.name}" data-lang-en="${p.enName}">${p.name}</h4>
+                        <p class="text-sm text-slate-500 mb-6 flex-1" data-lang-id="${p.desc}" data-lang-en="${p.enDesc}">${p.desc}</p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex flex-col gap-1">
+                                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Jumlah Pesanan</label>
+                                <input type="number" id="qty-${p.id}" value="1" min="1" class="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#789461]/20 focus:border-[#789461] transition-all text-sm font-semibold">
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Catatan Ke Admin</label>
+                                <textarea id="msg-${p.id}" placeholder="Contoh: Kirim ke alamat kantor" class="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-[#789461]/20 focus:border-[#789461] transition-all text-sm resize-none" rows="2"></textarea>
+                            </div>
+                        </div>
+
+                        <button onclick="orderWhatsApp('${p.id}', '${p.name}')" class="w-full py-3.5 rounded-xl bg-[#789461] text-white flex items-center justify-center gap-2 hover:brightness-110 shadow-lg shadow-[#789461]/20 active:scale-[0.98] transition-all font-bold">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            <span data-lang-id="Beli Sekarang" data-lang-en="Order Now">Beli Sekarang</span>
+                        </button>
+                    </div>
+                `).join(''));
+            </script>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-slate-900 text-white pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-24 mb-20">
+                <div>
+                    <h2 class="text-4xl font-bold mb-8" data-lang-id="Mari Berdiskusi" data-lang-en="Let's Talk">Mari Berdiskusi</h2>
+                    <p class="text-slate-400 mb-12" data-lang-id="Punya pertanyaan tentang ekspor atau pemesanan custom? Tim kami siap membantu Anda." data-lang-en="Have questions about exports or custom orders? Our team is ready to help you.">Punya pertanyaan tentang ekspor atau pemesanan custom? Tim kami siap membantu Anda.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-[#789461]"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h5 class="font-bold">Malang Office</h5>
+                                <p class="text-sm text-slate-400">Jl. Raya Candi VA No. 105, Kota Malang, Jawa Timur</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-[#789461]"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h5 class="font-bold">Email Us</h5>
+                                <p class="text-sm text-slate-400">fresipjay4@gmail.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-[#789461] transition-all">
+                        <input type="email" placeholder="Your Email" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-[#789461] transition-all">
+                        <textarea placeholder="Message" rows="4" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl outline-none focus:border-[#789461] transition-all"></textarea>
+                        <button class="w-full py-4 sage-bg rounded-xl font-bold hover:brightness-110 transition-all">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 flex items-center justify-center bg-[#789461] rounded">
+                        <img src="Logo FRESIP dengan elemen air dan daun.png" alt="Logo" class="rounded logo-placeholder">
+                    </div>
+                    <span class="font-bold text-lg tracking-tight">FRE<span class="text-slate-400">SIP</span></span>
+                </div>
+                <div class="flex flex-wrap gap-6 text-slate-400">
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/fre5ip?igsh=MXRhODJrd2VpcjZ3dA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i data-lucide="instagram"></i>
+                        <span class="text-xs hidden lg:inline">Instagram</span>
+                    </a>
+                    
+                    <!-- TikTok -->
+                    <a href="https://www.tiktok.com/@fresip8?_r=1&_t=ZS-94KNAJ3TMS9" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2">
+                        <!-- Menggunakan SVG TikTok kustom karena Lucide versi lama mungkin belum menyertakannya -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tiktok"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                        <span class="text-xs hidden lg:inline">TikTok</span>
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="https://facebook.com/usernameanda" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i data-lucide="facebook"></i>
+                        <span class="text-xs hidden lg:inline">Facebook</span>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/company/usernameanda" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-2">
+                        <i data-lucide="linkedin"></i>
+                        <span class="text-xs hidden lg:inline">LinkedIn</span>
+                    </a>
+                </div>
+                <p class="text-slate-500 text-sm">© 2026 Malang Botanic. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281953654645" target="_blank" class="fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl z-50 hover:scale-110 transition-all">
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
+
+    <!-- AI Modal -->
+    <div id="ai-modal" class="fixed inset-0 z-[100] hidden items-center justify-center px-6">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="relative glass max-w-lg w-full rounded-3xl p-8 shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800"><i data-lucide="x"></i></button>
+            <div class="w-12 h-12 sage-bg text-white rounded-2xl flex items-center justify-center mb-6"><i data-lucide="sparkles"></i></div>
+            <h3 id="modal-title" class="text-2xl font-bold mb-4">AI Idea</h3>
+            <div class="bg-slate-50 p-6 rounded-2xl mb-6">
+                <p id="modal-content" class="text-slate-600 italic">"Memproses ide kreatif AI untuk produk ini..."</p>
+            </div>
+            <button onclick="closeModal()" class="w-full py-4 sage-bg text-white rounded-xl font-bold">Terima Kasih</button>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Language Toggle Logic
+        let currentLang = 'id';
+        function toggleLanguage() {
+            currentLang = currentLang === 'id' ? 'en' : 'id';
+            document.querySelectorAll('[data-lang-id]').forEach(el => {
+                el.innerText = el.getAttribute(`data-lang-${currentLang}`);
+            });
+            document.getElementById('lang-text').innerText = currentLang === 'id' ? 'ID | EN' : 'EN | ID';
+        }
+
+        // Slider Logic
+        function slideScroll(amount) {
+            document.getElementById('slider').scrollBy({ left: amount, behavior: 'smooth' });
+        }
+
+        // Modal Logic
+        const aiIdeas = {
+            "Bubuk Apel Malang": "Coba campurkan Bubuk Apel Malang ke dalam adonan muffin gandum Anda atau taburkan di atas oatmeal pagi untuk aroma kebun Malang yang autentik.",
+            "Bubuk Jahe Merah": "Sempurna untuk 'Ginger Latte' premium. Seduh dengan susu oat dan sedikit madu hutan untuk daya tahan tubuh maksimal.",
+            "Bubuk Kopi Dampit": "Selain diminum, gunakan sebagai campuran scrub tubuh alami atau bumbu perendam daging (rub) untuk rasa smoky yang unik.",
+            "Bubuk Buah Naga": "Gunakan sebagai pewarna alami untuk pasta atau mie sehat. Warnanya yang vibrant tetap terjaga meski setelah dimasak.",
+            "Bubuk Jeruk Keprok": "Sangat cocok untuk campuran teh Earl Grey atau sebagai garnish kering pada cocktail/mocktail elegan."
+        };
+
+        function openModal(product) {
+            document.getElementById('modal-title').innerText = `Ide AI: ${product}`;
+            document.getElementById('modal-content').innerText = aiIdeas[product] || "Ide menarik sedang disiapkan oleh AI kami.";
+            const modal = document.getElementById('ai-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('ai-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Simple Chat Logic
+        const chatInput = document.querySelector('input[type="text"]');
+        const chatSend = document.querySelector('button .lucide-send').parentElement;
+        const chatWindow = document.getElementById('chat-window');
+
+        function appendMessage(text, isBot = false) {
+            const msg = document.createElement('div');
+            msg.className = `flex gap-3 ${isBot ? '' : 'flex-row-reverse'}`;
+            msg.innerHTML = `
+                <div class="w-8 h-8 rounded-full ${isBot ? 'sage-bg' : 'bg-slate-800'} flex items-center justify-center text-white">
+                    <i data-lucide="${isBot ? 'bot' : 'user'}" class="w-4 h-4"></i>
+                </div>
+                <div class="${isBot ? 'bg-slate-100 rounded-tl-none' : 'bg-[#789461] text-white rounded-tr-none'} p-3 rounded-2xl max-w-[80%]">
+                    <p>${text}</p>
+                </div>
+            `;
+            chatWindow.appendChild(msg);
+            lucide.createIcons();
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        chatSend.onclick = () => {
+            if(!chatInput.value) return;
+            appendMessage(chatInput.value, false);
+            const val = chatInput.value.toLowerCase();
+            chatInput.value = '';
+            
+            setTimeout(() => {
+                let response = "Maaf, asisten kami sedang mempelajari pertanyaan Anda. Silakan hubungi via WhatsApp untuk respon cepat.";
+                if(val.includes("harga") || val.includes("price")) response = "Harga bervariasi tergantung volume. Kami menyediakan kemasan 50g hingga 25kg. Bisa saya kirimkan daftar harga via email?";
+                if(val.includes("lokasi") || val.includes("malang")) response = "Kami berlokasi di Kota Malang, Jawa Timur. Semua produk kami diproses dari hasil perkebunan lokal di lereng pegunungan Malang.";
+                appendMessage(response, true);
+            }, 1000);
+        };
+    </script>
+    <script>
+        // Gunakan nomor WhatsApp yang benar (format internasional tanpa +)
+        const WHATSAPP_NUMBER = "+62-819-5365-4645"; 
+
+        function orderWhatsApp(id, productName) {
+            // Mengambil nilai berdasarkan ID unik per produk
+            const qty = document.getElementById(`qty-${id}`).value;
+            const note = document.getElementById(`msg-${id}`).value;
+            
+            // Format pesan yang dikirim
+            const message = `Halo Malang Botanic, saya ingin memesan produk berikut:\n\n` +
+                            `📦 *Produk:* ${productName}\n` +
+                            `🔢 *Jumlah:* ${qty} Pack/Kg\n` +
+                            `📝 *Catatan:* ${note || '-'}\n\n` +
+                            `Mohon diproses, terima kasih.`;
+            
+            // Encode URI agar karakter spesial terbaca WhatsApp
+            const url = `https://wa.me/${081953654645}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
